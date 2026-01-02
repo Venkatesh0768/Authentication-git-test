@@ -19,7 +19,7 @@ public class UserService {
     @Transactional
     public UserDto registerUser(RegisterRequest request) {
         if (userRepository.existsUserByEmail(request.getEmail())) {
-            throw new RuntimeException("User with email " + request.getEmail() + " already exists");
+            throw new RuntimeException("Email already in use");
         }
 
         User user = User.builder()
