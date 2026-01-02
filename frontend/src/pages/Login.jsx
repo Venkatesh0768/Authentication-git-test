@@ -39,6 +39,7 @@ const Login = () => {
       };
 
       const result = await authService.login(credentials);
+      console.log(result);
       
       if (result.token) {
         if (rememberMe) {
